@@ -1,0 +1,7 @@
+/https/*
+/node_modules
+.data/tokens/*
+.data/users/*
+.data/shopingCart/*
+.data/orders/*
+.env.js
