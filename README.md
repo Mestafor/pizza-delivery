@@ -153,7 +153,7 @@ node index.js
  * Required data: email, list, token(in headers)
  * Optional data: none
  *Example: 
- POST localhost:3000shopingCart
+ POST localhost:3000/shopingCart
  body: {
    email: string,
    list: [
@@ -177,7 +177,7 @@ node index.js
  * Required data: id, token(in headers)
  * Optional data: none
  * Example:
- GET localhost:3000shopingCart?id=1hn598pf6syvbw9oeidz
+ GET localhost:3000/shopingCart?id=1hn598pf6syvbw9oeidz
  headers: {
    id: string
  }
@@ -189,7 +189,7 @@ node index.js
  * Required data: id, token(in headers)
  * Optional data: list
  * Example
- PUT localhost:3000shopingCart
+ PUT localhost:3000/shopingCart
  body: {
    id: string,
    list: [
