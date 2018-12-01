@@ -1,0 +1,38 @@
+<h1>Cerate your account</h1>
+
+<form action="/api/users" method="POST" data-name="accountCreate">
+  <fieldset>
+    <legend>Fill all fields</legend>
+    <label>
+      <em>Name</em>: <br>
+      <input type="text" name="name" placeholder="Sir Arthur Conan Doyle">
+    </label>
+
+    <br>
+    <br>
+
+    <label>
+      <em>Email</em>: <br>
+      <input type="email" name="email" placeholder="Sir@Arthur.com">
+    </label>
+
+    <br>
+    <br>
+
+    <label>
+      <em>Street</em>: <br>
+      <input type="text" name="street" placeholder="221B Baker Street">
+    </label>
+
+    <br>
+    <br>
+
+    <label>
+      <em>Password</em>: <br>
+      <input type="password" name="password" placeholder="Password">
+    </label>
+  </fieldset>
+  <br>
+
+  <button type="submit" class="btn btn--style1">Create account</button>
+</form>

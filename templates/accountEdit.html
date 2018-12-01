@@ -1,0 +1,71 @@
+<h1>Edit</h1>
+
+<form action="api/users" data-method="PUT" data-name="accountEdit">
+  <div class="error-box"></div>
+  <div class="success-box"></div>
+  <fieldset>
+    <legend>Edit</legend>
+
+    <label>
+      <em>Email</em>: <br>
+      <input type="email" name="email" placeholder="Sir@Arthur.com" disabled>
+    </label>
+
+    <br>
+    <br>
+
+    <label>
+      <em>Name</em>: <br>
+      <input type="text" name="name" placeholder="Sir Arthur Conan Doyle">
+    </label>
+
+    <br>
+    <br>
+
+    <label>
+      <em>Street</em>: <br>
+      <input type="text" name="street" placeholder="221B Baker Street">
+    </label>
+  </fieldset>
+  <br>
+
+  <button type="submit" class="btn btn--style1">Save changes</button>
+</form>
+
+<br>
+<br>
+
+<form action="api/users" data-method="PUT" data-name="accountEdit">
+  <div class="error-box"></div>
+  <div class="success-box"></div>
+  <fieldset>
+    <legend>Change password</legend>
+    <input type="hidden" name="email" placeholder="Sir@Arthur.com" disabled>
+
+    <label>
+      <em>Password</em>: <br>
+      <input type="password" name="password" placeholder="Password">
+    </label>
+  </fieldset>
+  <br>
+
+  <button type="submit" class="btn btn--style1">Change password</button>
+</form>
+
+<br>
+<br>
+
+<form action="api/users" data-method="DELETE" data-name="accountDeleted">
+  <div class="error-box"></div>
+  <div class="success-box"></div>
+  <fieldset>
+    <legend>Delete account</legend>
+    <input type="hidden" name="email" placeholder="Sir@Arthur.com" disabled>
+    <p class="warning">
+      Warning: This action cannot be undone. Dont click this button on accident!
+    </p>
+  </fieldset>
+  <br>
+
+  <button type="submit" class="btn btn--style3">DELETE ACCOUNT</button>
+</form>

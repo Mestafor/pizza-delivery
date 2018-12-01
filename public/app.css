@@ -1,0 +1,320 @@
+:root {
+  --small-indent: 7px;
+  --default-indent: 15px;
+  --large-indent: 30px;
+
+  --color-main: #000;
+  --color-inverse: #fff;
+  --color-accent: rgb(76, 0, 255);
+  --color-success: rgb(0, 180, 0);
+}
+
+/* Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-main);
+}
+
+a {
+  color: var(--main-color);
+  transition: color .4s ease;
+}
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Grid */
+@supports(display: grid) {
+  .app {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "h h h"
+    "m m m"
+    "f f f";
+  }
+
+  .app__header {
+    grid-area: h;
+    padding: 5px var(--default-indent);
+  }
+
+  .app__main {
+    grid-area: m;
+    padding: 0 var(--default-indent);
+  }
+
+  .app__footer {
+    grid-area: f;
+    padding: var(--default-indent);
+  }
+}
+
+.app__footer {
+  font-style: italic;
+  opacity: .7;
+  text-align: center;
+}
+
+/* Menu */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header__logo img {
+  max-width: 50px;
+}
+
+/* Menu */
+.header__menu ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__menu li {
+  display: block;
+  flex: 0 0 auto;
+  margin-left: 20px;
+}
+
+.header__menu a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body:not(.loggedIn-user) .loggedIn {
+  display: none;
+}
+
+.loggedIn-user .loggedIn {
+  display: block;
+}
+
+.loggedIn-user .loggedOut {
+  display: none;
+}
+
+/* Inputs */
+input {
+  padding: 5px 10px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.btn:hover {
+  color: inherit;
+  background-color: inherit;
+  transition: background-color .4s ease, color .4s ease;
+}
+
+.btn--style1 {
+  background-color: green;
+  color: white;
+}
+
+.btn--style2 {
+  background-color: blue;
+  color: white;
+}
+
+.btn--style3 {
+  background-color: rgb(173, 6, 6);
+  color: white;
+}
+
+/* Home page */
+.app-ordersSuccess-page .app__main,
+.app-home-page .app__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LoggedOut page */
+.app-sessionDeleted-page .app__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Info box */
+.success-box,
+.error-box {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  padding: 20px;
+  margin-bottom: 15px;
+  color: white;
+  animation: showErrorBox .4s ease forwards;
+  transform-origin: bottom;
+  border-radius: 4px;
+}
+
+.success-box:empty,
+.error-box:empty {
+  display: none;
+}
+
+.error-box {
+  background-color: rgb(173, 6, 6);
+}
+
+.success-box {
+  background-color: rgb(27, 133, 0);
+}
+
+@keyframes showErrorBox {
+  from {
+    transform: scale(1, 0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.warning {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  padding: 20px;
+  margin-bottom: 15px;
+  color: white;
+  background-color: rgb(172, 112, 0);
+  border-radius: 4px;
+}
+
+/* Menu list */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+.menu-grid__item {
+  padding: 15px;
+  box-shadow: 0 3px 4px 1px rgba(0,0,0,.5); 
+}
+
+@media(min-width: 500px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(min-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media(min-width: 1200px) {
+  .menu-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Helpers */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.color-success {
+  color: var(--color-success);
+}
+
+.disabled {
+  opacity: .2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Shoping cart count */
+.shoping-cart-count {
+  position: relative;
+  display: inline-block;
+  color: var(--color-inverse);
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 0 5px;
+}
+.shoping-cart-count:before {
+  content: '';
+  position: absolute;
+  top: 50%;  
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.05);
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  z-index: -1;
+}
+
+/* tables */
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid;
+  padding: 10px 15px;
+}
+
+.processing {
+  margin-right: var(--default-indent);
+}
+
+.processing__dot {
+  display: inline-block;
+}
+.processing__dot:nth-child(1) {
+  animation: dot-anim 1.2s ease-in infinite;
+}
+.processing__dot:nth-child(2) {
+  animation: dot-anim 1.2s ease-in .3s infinite;
+}
+.processing__dot:nth-child(3) {
+  animation: dot-anim 1.2s ease-in .6s infinite;
+}
+
+@keyframes dot-anim {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+}

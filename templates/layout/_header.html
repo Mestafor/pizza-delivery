@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- General Settings -->
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="en-us">
+  <base href="{global.baseUrl}" />
+
+  <!-- Meta Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{head.title} | {global.appName}</title>
+  <meta name="desciption" content="{head.description}">
+
+  <!-- Static Assets -->
+  <link rel="image/x-icon" rel="icon" href="favicon.ico">
+  <script defer type="text/javascript" charset="utf-8" src="public/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="public/app.css">
+</head>
+
+<body class="app {body.class}">
+
+  <!-- Header -->
+  <header class="app__header header">
+    <div class="header__logo">
+      <a href="/">
+        <img src="public/images/logo.png" alt="Logo">
+      </a>
+    </div>
+    <div class="header__menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="loggedIn"><a href="/menu/all">Menu</a></li>
+        <li class="loggedIn"><a href="/shopingCart">Shoping Cart <span class="shoping-cart-count"></span> </a></li>
+        <li class="loggedIn"><a href="/orders/all">Orders List</a></li>
+        <li class="loggedOut"><a href="/account/create">Account Create</a></li>
+        <li class="loggedIn"><a href="/account/edit">Account Edit</a></li>
+        <li class="loggedOut"><a href="/session/create">Login</a></li>
+        <li class="loggedIn"><a href="#" class="logoutButton">Logout</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- /Header -->
+
+  <!-- Main -->
+  <main class="app__main">
