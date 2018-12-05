@@ -1,5 +1,5 @@
 # Pizza-delivery
-You are building the API for a pizza-delivery company. Don't worry about a frontend, just build the API. Here's the spec from your project manager: 
+You are building the API for a pizza-delivery company. Here's the spec from your project manager: 
 
 1. New users can be created, their information can be edited, and they can be deleted. We should store their name, email address, and street address.
 2. Users can log in and log out by creating or destroying a token.
@@ -232,4 +232,23 @@ node index.js
  headers: {
    token: string
  }
+```
+
+## 4. ADMIN CLI
+```
+man - Show this help page
+
+help - Aliace to the "man" command
+
+exit - Kill the CLI (and rest of application)
+
+list menu - Show all the current menu items
+
+list orders - Show all the recent orders in the system (orders placed in the last 24 hours)
+
+more order info --{orderId} - Show the details of a specific order by order ID
+
+list users -Show all the users who have signed up in the last 24 hours
+
+more user info --{userEmail} - Show the details of a specific user by email address
 ```
