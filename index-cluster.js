@@ -29,8 +29,10 @@ app.init = () => {
   }
 };
 
-// Execute
-app.init();
+// Self invoking only if required directly
+if (require.main === module) {
+  app.init();
+}
 
 // Export the app
 module.exports = app;
