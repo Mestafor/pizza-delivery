@@ -8,6 +8,13 @@ You are building the API for a pizza-delivery company. Here's the spec from your
 5. A logged-in user should be able to create an order. 
 6. When an order is placed, you should email the user a receipt.
 
+### Usefull
+```
+NODE_DEBUG=server node index.js
+NODE_DEBUG=performance node index.js - debug only menu get handler (/api/menu)
+node index-cluster.js - use all cores of machine
+```
+
 ## 1. Generate certificate
 ------
 ```
